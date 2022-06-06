@@ -72,13 +72,13 @@ map_outside = '''
 def d_intro():
     print("\nYou are in a basement, a bit confued.  You have just been playing video games for 47.3 hours, only pausing to dail up the pizza delivery guy to get you another extra large pizza with only cheese.  *SHPAOOSH.\n") 
     input() 
-    print("Dammit, there goes to super cool gaming system (play system 3.5.7).\n")
+    print("oh no, there goes to super cool gaming system (play system 3.5.7).\n")
     input()
     print("*Turn on the news \n \"...and now we bring you breaking news:  zombies have taken over the local Walemart.  Now the only safe place to hide is the island...\" *RING.")
     input()
     print("You:\"Hello\"\n")
     input()
-    print("Fred:\"Dude, there is a zombie outbreak\"\n")
+    print("Fred:\"there is a zombie outbreak\"\n")
     input()
     print("You: \"I know, what are we going to do\"\n")
     input()
@@ -397,7 +397,7 @@ def main():
         elif dev == "drop":	# Drops stuff
             drop() 
         else: 
-            print("what is this \"" + dev + "\" nonsense")
+            print("what is this \"" + dev + "\" ?")
 
 # The introduction
 print("\n \n \n \nHello and welcome to the game.  It is about you!  Also about zombies.  If this is your first time playing you should type in 'how to play' so that you can learn to play the game.  If you played the game before, took a look at the code before playing or are exceptional at guessing, type in 'start' to begin.") 
