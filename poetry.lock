@@ -1,0 +1,20 @@
+[[package]]
+name = "readline"
+version = "6.2.4.1"
+description = "The standard Python readline extension statically linked against the GNU readline library."
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.9"
+content-hash = "d77c4690e988d32e575ab4fc1e2c4160a93b11d2a29f228775cda1ecd0770b7a"
+
+[metadata.files]
+readline = [
+    {file = "readline-6.2.4.1-py2.5-macosx-10.5-i386.egg", hash = "sha256:6b34cf7c651791c3017b9cf31c74ef99b9050d14ae55a32898f2eb41787ca00a"},
+    {file = "readline-6.2.4.1-py2.6-macosx-10.6-universal.egg", hash = "sha256:c157d3cf5f97794f0153cfc8ca90c9e11f810b8045d4a0acd33046379342f163"},
+    {file = "readline-6.2.4.1-py2.7-macosx-10.7-intel.egg", hash = "sha256:d91a3294f027fb0d3b124117c550312f45eded265e01c62fd3470c28cda0e346"},
+    {file = "readline-6.2.4.1.tar.gz", hash = "sha256:e00f86e03dfe52e7d1502cec5c64070b32621c85509c0081a4cfa6a0294bd107"},
+]
