@@ -1,8 +1,16 @@
 
 import colorama
 from colorama import Fore
+import pyttsx3
+
+
+engine = pyttsx3.init()
 count_dog = 0
 count_treat = 0
+count_crisp = 0
+count_key =0
+
+
 
 def floor_10_map():
     floor_10 = print(Fore.RED +'''
@@ -21,12 +29,31 @@ FLOOR 10
 ''')
 
 
+def floor_11_map():
+    floor_11 = print(Fore.RED +'''
+\n *****************************\n
+FLOOR 11
+                    ----------------
+                    |              |
+                    | DESK CLUSTER |
+                    |              |
+---------------     ------|   |-----
+|             |           |   | 
+|CANTEEN |       ----     ----            ---------------
+|             |------|    | -------- |     TREASURE CHECK               |
+--------------       -------------        ---------------
+\n *****************************\n
+''')
+
+
+
+
 def start ():
     print ( "\n *****************************\n")
-    
-        
     print (Fore.LIGHTMAGENTA_EX +"\nWelcome to the Adventure Game!\nLet's get started!\n")
-    print (Fore.LIGHTMAGENTA_EX + "\n *****************************\n")
+    engine.say("Welcome to the Adventure Game Let's get started!")
+    engine.runAndWait()
+    print(Fore.LIGHTMAGENTA_EX + "\n *****************************\n")
     print (Fore.CYAN +"Your eyes slowly open and you quickly realise that you are in the Manchester KPMG Office. You scan the room and see that you are alone in the desk cluster on Floor 10.\nThe once vibrant space is now dark, cold and empty with a strange chill to the air.\n")
     print ("You feel your phone buzz in your pocket\nCheck your phone? (yes/no)\n") 
 
@@ -72,8 +99,8 @@ def start ():
                     print("\nYou should probably read those messages or try to get in contact with Balajee before you go anywhere. \nWhat are you going to do? (call balajee/read messages)\n")
                     question = input()
 
-            phone = "answered"
-            map_check()
+                    phone = "answered"
+                    map_check()
         else:
             print("You gonna answer the phone or what? (yes/no)")
             ans = input()
@@ -121,6 +148,38 @@ def floor_10(count_dog, count_treat):
         else:
             print("\n Sorry did you mean - elevators/meeting room/ktichen area?\n")
             direction = input()
+
+def floor_11(count_crisp):
+    canteen = False
+    while canteen == False:
+        print("\nWhere are you going next?\n")
+        floor_11_map()
+        direction = input()
+        if direction.upper() == "CANTEEN":
+            canteen_area()
+        else:
+            print("\n Sorry did you mean - elevators/meeting room/ktichen area?\n")
+            # direction = input()
+            # print("\nYou make your way over to the Canteen. You stand at the door and think about what to do next - use the canteen or investigate?\n(Canteen/Investigate)\n")
+            # movement = input()
+            # if movement.upper() == "USE THE CANTEEN" and count_crisp !=1:
+            #     print("You are on your way to the canteen")
+        #     elif movement.upper() == "ELEVATORS" or "ELEVATOR" and count_dog == 1 and count_treat == 1:
+        #         print("\nContent you have found everything on this floor you --------- ")
+        #         #this is where the other floors/levels need their functions placing 
+        #     elif movement.upper() == "MEETING ROOM":
+        #         meeting_room(count_dog, count_treat)
+        #     elif movement.upper() == "KITCHEN AREA":
+        #         kitchen_area()
+        # elif direction.upper() == "MEETING ROOM":
+        #     meeting_room(count_treat, count_dog)
+        # elif direction.upper() == "KITCHEN AREA":
+        #     kitchen_area()
+        # elif direction.upper() == "ELEVATORS":
+        #     print("\nYou are already at the elevators\n")
+        #     print("\nWhere do you want to go next?\n")
+        #     direction = input()
+        
         
 
 def kitchen_area():
@@ -203,83 +262,45 @@ def meeting_room(count_treat, count_dog):
         print("\nAs you approach the meeting room snacking on your delicious dog treats, a dog runs up to you and sits politely at your feet.\nLicking its lips clearly interested in the bitesize goodies you picked up in the kitchen.")
         count_dog += 1
         print("\nYou decide to take the dog with you.\nYou delicately pick it up and place it caringly in your KPMG backup.\nResolute you have everything from this floor you head over to the elevators\n")
-        floor_10(count_dog,count_treat)
-
-def elevator():
-    floor_11_quest = ("what floor do you want to go up - you're on 10, thats the lowest, : Floor 11\n")
-    if input == floor_11
-        print(direction.upper)
-
-    if
-
-def floor_11(count_dog, count_treat):
-    elevator = False
-    while elevator == False:
-        print("\nWhere are you going next?\n")
-        direction = input()
-        if direction.upper() == "CANTEEN":
-            print("\nYou make your way over to the elevators. You stand at in the corridor and think about what to do next - use the elevators or investigate the other rooms?\n(use the elevators/meeting room/kitchen area)\n")
-            movement = input()
-            if movement.upper() == "USE THE ELEVATORS" and count_dog != 1 and count_treat != 1:
-                print("\nYou're about to use the elevators but then you have not investigated the other rooms!\nWhat if there are some important items in them or if someone spent ages coding going into those rooms.\nYou decide not investigating the rest of the floor would be rude and instead think which room you should look in first\n")
-            elif movement.upper() == "ELEVATORS" or "ELEVATOR" and count_dog == 1 and count_treat == 1:
-                print("\nContent you have found everything on this floor you --------- ")
-                #this is where the other floors/levels need their functions placing 
-            elif movement.upper() == "MEETING ROOM":
-                meeting_room(count_dog, count_treat)
-            elif movement.upper() == "KITCHEN AREA":
-                kitchen_area()
-        elif direction.upper() == "MEETING ROOM":
-            meeting_room(count_treat, count_dog)
-        elif direction.upper() == "KITCHEN AREA":
-            kitchen_area()
-        elif direction.upper() == "ELEVATORS":
-            print("\nYou are already at the elevators\n")
-            print("\nWhere do you want to go next?\n")
-            direction = input()
-        else:
-            print("\n Sorry did you mean - elevators/meeting room/ktichen area?\n")
-            direction = input()
-
-def floor_11_map():
-    floor_11 = print(Fore.RED +'''
-\n *****************************\n
-FLOOR 11
-                    ----------------
-                    |              |
-                    | ELEVATOR     |
-                    |              |
----------------     ------|   |-----
-|             |           |   | 
-| Canteen|       ----     ----            ---------------
-|             |------|  Corridor  | -------- | Security team  |
---------------       -------------             ---------------
-\n *****************************\n
-''')
-
-def canteen(count_treat, count_dog):
-    print("\nYou make your way over to the meeting room\n")
-    in_canteen = True
-    while in_canteen == True and count_treat == 0:
-            print("\nAs you approach you the door to the meeting room you find a dog collar on the floor and you hear barking coming from the room.\nAs you enter room the noise gets quieter.\nIf only you had something to entice the dog to come to you...")
-            print("\nWhere do you want to go next?")
-            meeting_room_move = input()
-            if meeting_room_move.upper() == "CHECK MAP":
-                floor_10_map()
-                in_canteen = False
-            elif meeting_room_move.upper() == "KITCHEN AREA":
-                kitchen_area()
-                #in_meeting_room = False
-            elif meeting_room_move.upper() == "MEETING ROOM":
-                print("\nYou are already in the meeting room\n")
-                print("Where are you going next?\n")
-            elif meeting_room_move.upper() == "ELEVATORS":
-                floor_11(count_dog,count_treat)            
-            else:
-                print("\nPick a place to go next\n")
-    while in_canteen == True and count_treat == 1:
-        print("\nAs you approach the meeting room snacking on your delicious dog treats, a dog runs up to you and sits politely at your feet.\nLicking its lips clearly interested in the bitesize goodies you picked up in the kitchen.")
-        count_dog += 1
-        print("\nYou decide to take the dog with you.\nYou delicately pick it up and place it caringly in your KPMG backup.\nResolute you have everything from this floor you head over to the elevators\n")
         floor_11(count_dog,count_treat)
+
+def canteen_area():
+    count_crisp = 0
+    # in_canteen = True
+    print("\nYou make your way over to the canteen area\n")
+    print("\nThe kitchen area is no longer filled with the sweet smell of freshly cooked food and the laughter of content employees.\nInstead spilt tomato soup is splattered over the floor and the lights flicker on and off.\nA chill races down your spine as you realise that only someone who is truly afraid would so carelessly spill their tomato soup.\nCautioulsy, you scan your surroundings.\nInvestigate further? (yes/no)\n ")
+    # canteen = input()
+    # choice = True
+    # while choice == True:
+    #     if canteen.upper() == "YES":
+    #         choice = False
+    #         print("\nYour investigation of the kitchen is successful!\nYou find a box of dog treats and decide to put some in your pocket for a snack later.\nNo one is around to shame you for your addiction to nutritous dog treats - you love how they make your hair thick and shiny.\n")
+    #         count_crisp+= 1
+    #         # print("\nYou decide further investigation of the kitchen would be fruitless\nWhere to next?\n")
+    #         # while in_canteen == True and count_crisp == 1:
+    #         #     next_move = input()
+    #         #     print(next_move)
+    #         #     if next_move.upper() == "CHECK MAP":
+    #         #         in_canteen = False
+    #         #         floor_11_map()
+    #         #     elif next_move.upper() == "CANTEEN AREA":
+    #         #         print("\nYou're already in the canteen area\n")
+    #         #         print("\nWhere do you want to go next?\n")
+    #         #         next_move = input()
+    #         #     elif next_move.upper() == "INVESTIGATE":
+    #         #         in_canteen = False
+    #         #         meeting_room(count_treat, count_dog)
+    #     else:
+    #                 print("\nYou had over to the elevators\n")
+
+
+
+
+
+
+
+# def further_investigate():
+
+
+
 start()
