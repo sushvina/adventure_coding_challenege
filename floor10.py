@@ -265,10 +265,13 @@ def meeting_room(count_treat, count_dog):
         floor_11(count_crisp)
 
 def canteen_area():
-    
+
+    ans = input()
+
     count_crisp = 0
     print("\nYou make your way over to the canteen area\n")
     print("\nYou are very hungry and despite having no money,you pick up the delicious crisp over there\n")
+    count_crisp += 1
     print("\n You will see an important message there to find lindsey earlier and to investigate other rooms\n Do you want to go to the next floor  or investgate other room?\n(NEXT FLOOR/INVESTIGATE)\n")
     canteen=input()
     choice = True
@@ -276,6 +279,21 @@ def canteen_area():
         if canteen.upper() == "NEXT FLOOR":
             choice = False
         # floor13()
+        elif canteen.upper() == "INVESTIGATE":
+            choice = False 
+
+            print("You have found treasure, you have come across a key labelled as Floor 13 access key .. you pick it up")
+            print("Wait, do you really want to go to the haunted floor on a Friday? \n")
+
+        else:
+            print("You're in floor 13, no map, \n Do you dare to open? ")
+            close = "door closed":
+            if ans.upper() == "YES": 
+                print("you are floor 13")
+            if ans.upper() == "NO":
+            print ("\n *****************************\n")
+            print ("GAME OVER - YOUR LAZINESS RESULTED IN THE DOWNFALL OF KPMG")
+            break
             
             
         # count_crisp += 1
