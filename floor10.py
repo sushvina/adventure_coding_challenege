@@ -280,7 +280,7 @@ def canteen_area():
             
         # count_crisp += 1
     else:
-            print("bjdkslkls;s")
+            print("")
             
     # in_canteen = True
     # print("\nYou make your way over to the canteen area\n")
