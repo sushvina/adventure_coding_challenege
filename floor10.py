@@ -99,8 +99,8 @@ def start ():
                     print("\nYou should probably read those messages or try to get in contact with Balajee before you go anywhere. \nWhat are you going to do? (call balajee/read messages)\n")
                     question = input()
 
-                    phone = "answered"
-                    map_check()
+            phone = "answered"
+            map_check()
         else:
             print("You gonna answer the phone or what? (yes/no)")
             ans = input()
@@ -156,7 +156,7 @@ def floor_11(count_crisp):
         floor_11_map()
         direction = input()
         if direction.upper() == "CANTEEN":
-            canteen_area()
+         canteen_area()
         else:
             print("\n Sorry did you mean - elevators/meeting room/ktichen area?\n")
             # direction = input()
@@ -262,15 +262,30 @@ def meeting_room(count_treat, count_dog):
         print("\nAs you approach the meeting room snacking on your delicious dog treats, a dog runs up to you and sits politely at your feet.\nLicking its lips clearly interested in the bitesize goodies you picked up in the kitchen.")
         count_dog += 1
         print("\nYou decide to take the dog with you.\nYou delicately pick it up and place it caringly in your KPMG backup.\nResolute you have everything from this floor you head over to the elevators\n")
-        floor_11(count_dog,count_treat)
+        floor_11(count_crisp)
 
 def canteen_area():
+    
     count_crisp = 0
-    # in_canteen = True
     print("\nYou make your way over to the canteen area\n")
-    print("\nThe kitchen area is no longer filled with the sweet smell of freshly cooked food and the laughter of content employees.\nInstead spilt tomato soup is splattered over the floor and the lights flicker on and off.\nA chill races down your spine as you realise that only someone who is truly afraid would so carelessly spill their tomato soup.\nCautioulsy, you scan your surroundings.\nInvestigate further? (yes/no)\n ")
-    # canteen = input()
-    # choice = True
+    print("\nYou are very hungry and despite having no money,you pick up the delicious crisp over there\n")
+    print("\n You will see an important message there to find lindsey earlier and to investigate other rooms\n Do you want to go to the next floor  or investgate other room?\n(NEXT FLOOR/INVESTIGATE)\n")
+    canteen=input()
+    choice = True
+    while choice == True:
+        if canteen.upper() == "NEXT FLOOR":
+            choice = False
+        # floor13()
+            
+            
+        # count_crisp += 1
+    else:
+            print("bjdkslkls;s")
+            
+    # in_canteen = True
+    # print("\nYou make your way over to the canteen area\n")
+    # print("\nThe kitchen area is no longer filled with the sweet smell of freshly cooked food and the laughter of content employees.\nInstead spilt tomato soup is splattered over the floor and the lights flicker on and off.\nA chill races down your spine as you realise that only someone who is truly afraid would so carelessly spill their tomato soup.\nCautioulsy, you scan your surroundings.\nInvestigate further? (yes/no)\n ")
+    
     # while choice == True:
     #     if canteen.upper() == "YES":
     #         choice = False
@@ -301,6 +316,6 @@ def canteen_area():
 
 # def further_investigate():
 
-
+# def floor13():
 
 start()
