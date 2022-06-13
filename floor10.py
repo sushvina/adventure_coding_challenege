@@ -2,6 +2,8 @@
 import colorama
 from colorama import Fore
 import pyttsx3
+from playsound import playsound
+
 
 
 engine = pyttsx3.init()
@@ -56,6 +58,7 @@ def start ():
     print(Fore.LIGHTMAGENTA_EX + "\n *****************************\n")
     print (Fore.CYAN +"Your eyes slowly open and you quickly realise that you are in the Manchester KPMG Office. You scan the room and see that you are alone in the desk cluster on Floor 10.\nThe once vibrant space is now dark, cold and empty with a strange chill to the air.\n")
     print ("You feel your phone buzz in your pocket\nCheck your phone? (yes/no)\n") 
+    playsound('telephone.wav')
 
     ans =  input()
     phone = "ringing"
@@ -112,6 +115,7 @@ def map_check():
             print(Fore.LIGHTGREEN_EX +"\nCheck your map by inputting \"check map\" - try it now\n")
             map_check = input()
             if map_check.upper() == "CHECK MAP":
+                playsound('door.wav')
                 floor_10_map()
                 checked_map = True
             elif map_check.upper() != "CHECK MAP":
@@ -144,9 +148,11 @@ def floor_10(count_dog, count_treat):
         elif direction.upper() == "ELEVATORS":
             print("\nYou are already at the elevators\n")
             print("\nWhere do you want to go next?\n")
+            playsound('door.wav')
             direction = input()
         else:
             print("\n Sorry did you mean - elevators/meeting room/ktichen area?\n")
+            playsound('door.wav')
             direction = input()
 
 def floor_11():
@@ -210,6 +216,7 @@ def kitchen_area():
                     floor_10()
                 else:
                     print("\nWhere do you want to go next?\n")
+                    playsound('door.wav')
                     next_move = input()
         elif kitchen.upper() == "NO":
                     print("\nYou decide not to investigate. The spilled tomato soup is a dangerous slip hazard so you helpfully put down a sign to prevent any workplace accidents.\n")
