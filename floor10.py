@@ -149,7 +149,7 @@ def floor_10(count_dog, count_treat):
             print("\n Sorry did you mean - elevators/meeting room/ktichen area?\n")
             direction = input()
 
-def floor_11(count_crisp):
+def floor_11():
     canteen = False
     while canteen == False:
         print("\nWhere are you going next?\n")
@@ -158,29 +158,25 @@ def floor_11(count_crisp):
         if direction.upper() == "CANTEEN":
          canteen_area()
         else:
-            print("\n Sorry did you mean - elevators/meeting room/ktichen area?\n")
-            # direction = input()
-            # print("\nYou make your way over to the Canteen. You stand at the door and think about what to do next - use the canteen or investigate?\n(Canteen/Investigate)\n")
-            # movement = input()
-            # if movement.upper() == "USE THE CANTEEN" and count_crisp !=1:
-            #     print("You are on your way to the canteen")
-        #     elif movement.upper() == "ELEVATORS" or "ELEVATOR" and count_dog == 1 and count_treat == 1:
-        #         print("\nContent you have found everything on this floor you --------- ")
-        #         #this is where the other floors/levels need their functions placing 
-        #     elif movement.upper() == "MEETING ROOM":
-        #         meeting_room(count_dog, count_treat)
-        #     elif movement.upper() == "KITCHEN AREA":
-        #         kitchen_area()
-        # elif direction.upper() == "MEETING ROOM":
-        #     meeting_room(count_treat, count_dog)
-        # elif direction.upper() == "KITCHEN AREA":
-        #     kitchen_area()
-        # elif direction.upper() == "ELEVATORS":
-        #     print("\nYou are already at the elevators\n")
-        #     print("\nWhere do you want to go next?\n")
-        #     direction = input()
+            print("\n So you made a bold decision to investigate further you dare devil!")
+            investigate()
         
+def floor_13(count_key):
+
+    elevetor_open = True
+    while elevetor_open == True:
+        print("\nYou can see a single door in front of you?\n You hear Lindsey behind the door asking for help")
+        if count_key==1:
+            elevetor_open == False
+            print("Lindsey is pleased to see her favourite FL member and her favourite pet Raya")
+            print("\nFinally the quest to find Lindsey is over!!\n")
+        else:
+            elevetor_open= False
+            print("Sorry you made the wrong choice of tool")
+            print ("\n *****************************\n")
+            print ("GAME OVER - YOUR FAILED AND RESULTED IN THE DOWNFALL OF KPMG")
         
+
 
 def kitchen_area():
     count_treat = 0
@@ -262,78 +258,54 @@ def meeting_room(count_treat, count_dog):
         print("\nAs you approach the meeting room snacking on your delicious dog treats, a dog runs up to you and sits politely at your feet.\nLicking its lips clearly interested in the bitesize goodies you picked up in the kitchen.")
         count_dog += 1
         print("\nYou decide to take the dog with you.\nYou delicately pick it up and place it caringly in your KPMG backup.\nResolute you have everything from this floor you head over to the elevators\n")
-        floor_11(count_crisp)
+        floor_11()
+
+def investigate():
+    count_key=0
+    print("\nYou find a couple of miscellaneous things on the table\n")
+    print("\n 1.Screw Driver\n 2.Key\n 3. Thor's Hammer\n 4.Axe")
+
+    option= input()
+    if option.upper()=="KEY":
+        count_key+=1
+        print(count_key)
+
+    else:
+        print("Ok good choice. Let's continue a quest to find Lindsey")
+        floor_13(count_key)
+
+
+    
 
 def canteen_area():
-
-    ans = input()
-
-    count_crisp = 0
+    count_crisp=0
     print("\nYou make your way over to the canteen area\n")
     print("\nYou are very hungry and despite having no money,you pick up the delicious crisp over there\n")
     count_crisp += 1
-    print("\n You will see an important message there to find lindsey earlier and to investigate other rooms\n Do you want to go to the next floor  or investgate other room?\n(NEXT FLOOR/INVESTIGATE)\n")
+    print("\n Time is ticking and our FL leader is still not visible\n Do you want to go to the next floor  or investgate other room?\n(NEXT FLOOR/INVESTIGATE)\n")
     canteen=input()
     choice = True
     while choice == True:
         if canteen.upper() == "NEXT FLOOR":
             choice = False
-        # floor13()
-        elif canteen.upper() == "INVESTIGATE":
-            choice = False 
-
-            print("You have found treasure, you have come across a key labelled as Floor 13 access key .. you pick it up")
-            print("Wait, do you really want to go to the haunted floor on a Friday? \n")
-
-        else:
-            print("You're in floor 13, no map, \n Do you dare to open? ")
-            close = "door closed":
-            if ans.upper() == "YES": 
-                print("you are floor 13")
-            if ans.upper() == "NO":
-            print ("\n *****************************\n")
-            print ("GAME OVER - YOUR LAZINESS RESULTED IN THE DOWNFALL OF KPMG")
+            floor_13(count_key)
             break
+        else:
+            canteen.upper() == "INVESTIGATE"
+            choice = False 
+            investigate()
+            
+    
+start()
+# else:
+        #     print("You're in floor 13, no map, \n Do you dare to open? ")
+        #     close = "door closed":
+        #     if ans.upper() == "YES": 
+        #         print("you are floor 13")
+        #     if ans.upper() == "NO":
+        #     print ("\n *****************************\n")
+        #     print ("GAME OVER - YOUR LAZINESS RESULTED IN THE DOWNFALL OF KPMG")
+        #     break
             
             
         # count_crisp += 1
-    else:
-            print("bjdkslkls;s")
-            
-    # in_canteen = True
-    # print("\nYou make your way over to the canteen area\n")
-    # print("\nThe kitchen area is no longer filled with the sweet smell of freshly cooked food and the laughter of content employees.\nInstead spilt tomato soup is splattered over the floor and the lights flicker on and off.\nA chill races down your spine as you realise that only someone who is truly afraid would so carelessly spill their tomato soup.\nCautioulsy, you scan your surroundings.\nInvestigate further? (yes/no)\n ")
-    
-    # while choice == True:
-    #     if canteen.upper() == "YES":
-    #         choice = False
-    #         print("\nYour investigation of the kitchen is successful!\nYou find a box of dog treats and decide to put some in your pocket for a snack later.\nNo one is around to shame you for your addiction to nutritous dog treats - you love how they make your hair thick and shiny.\n")
-    #         count_crisp+= 1
-    #         # print("\nYou decide further investigation of the kitchen would be fruitless\nWhere to next?\n")
-    #         # while in_canteen == True and count_crisp == 1:
-    #         #     next_move = input()
-    #         #     print(next_move)
-    #         #     if next_move.upper() == "CHECK MAP":
-    #         #         in_canteen = False
-    #         #         floor_11_map()
-    #         #     elif next_move.upper() == "CANTEEN AREA":
-    #         #         print("\nYou're already in the canteen area\n")
-    #         #         print("\nWhere do you want to go next?\n")
-    #         #         next_move = input()
-    #         #     elif next_move.upper() == "INVESTIGATE":
-    #         #         in_canteen = False
-    #         #         meeting_room(count_treat, count_dog)
-    #     else:
-    #                 print("\nYou had over to the elevators\n")
-
-
-
-
-
-
-
-# def further_investigate():
-
-# def floor13():
-
-start()
