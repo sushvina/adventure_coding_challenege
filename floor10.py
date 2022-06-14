@@ -64,8 +64,6 @@ FLOOR 11
 ''')
 
 
-
-
 def start ():
     print ( "\n *****************************\n")
     print (Fore.LIGHTMAGENTA_EX +"\nWelcome to the Adventure Game!\nLet's get started!\n")
@@ -318,12 +316,16 @@ def canteen_area():
             investigate()
 
 def floor_13(count_key):
-    if count_key == 0:
-        print("\nYou selected the wrong item! You cannot continue without the key. You have failed in your quest to find Lindsey, your actions have resulted in the downfall of KPMG\n")
-    else:
-        floor_13_map()
-        print("\nYou have found the key to free Lindsey! If you act quickly you may be eligible for a promotion\n")
-        print("\n")
+    item = False
+    while item == False:
+        if count_key == 0:
+            print("\nYou selected the wrong item! You cannot continue without the key. You have failed in your quest to find Lindsey, your actions have resulted in the downfall of KPMG\n")
+            exit()
+        else:
+            item = True
+            floor_13_map()
+            print("\nYou have found the key to free Lindsey! If you act quickly you may be eligible for a promotion\n")
+            print("\n")
 
 
 
