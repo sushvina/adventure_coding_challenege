@@ -285,14 +285,13 @@ def meeting_room(count_treat, count_dog):
 
 def investigate():
     count_key=0
+    choice = False
     print("\nYou find a couple of miscellaneous things on the table\n")
     print("\n 1.Screw Driver\n 2.Key\n 3. Thor's Hammer\n 4.Axe")
-
     option= input()
     if option.upper()=="KEY":
         count_key+=1
-        print(count_key)
-
+        floor_13(count_key)
     else:
         print("Ok good choice. Let's continue a quest to find Lindsey")
         floor_13(count_key)
