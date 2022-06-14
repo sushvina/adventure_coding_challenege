@@ -1,4 +1,5 @@
 
+from math import floor
 import colorama
 from colorama import Fore
 import pyttsx3
@@ -12,6 +13,21 @@ count_treat = 0
 count_crisp = 0
 count_key =0
 
+def floor_13_map():
+    floor_13 = print(Fore.RED +'''
+\n *****************************\n
+FLOOR 13
+                    ----------------
+                    |              |
+                    | ELEVATOR     |
+                    |              |
+                    ------|   |-----
+                          |   | 
+                     -----     ------
+                     |LINDSEY's OFFICE|
+                     ----------------
+\n *****************************\n
+''')
 
 
 def floor_10_map():
@@ -301,18 +317,30 @@ def canteen_area():
             canteen.upper() == "INVESTIGATE"
             choice = False 
             investigate()
+
+def floor_13(count_key):
+    if count_key == 0:
+        print("\nYou selected the wrong item! You cannot continue without the key. You have failed in your quest to find Lindsey, your actions have resulted in the downfall of KPMG\n")
+    else:
+        floor_13_map()
+        print("\nYou have found the key to free Lindsey! If you act quickly you may be eligible for a promotion\n")
+        print("\n")
+
+
+
             
     
-start()
 # else:
-        #     print("You're in floor 13, no map, \n Do you dare to open? ")
-        #     close = "door closed":
-        #     if ans.upper() == "YES": 
-        #         print("you are floor 13")
-        #     if ans.upper() == "NO":
-        #     print ("\n *****************************\n")
-        #     print ("GAME OVER - YOUR LAZINESS RESULTED IN THE DOWNFALL OF KPMG")
-        #     break
+#     print("You're in floor 13, no map, \n Do you dare to open? ")
+#             close = "door closed":
+#            if ans.upper() == "YES": 
+#                print("you are floor 13")
+#            if ans.upper() == "NO":
+#            print ("\n *****************************\n")
+#            print ("GAME OVER - YOUR LAZINESS RESULTED IN THE DOWNFALL OF KPMG")
+#            break
             
             
-        # count_crisp += 1
+#         count_crisp += 1
+
+start()
