@@ -82,6 +82,7 @@ def start ():
             print(Fore.LIGHTRED_EX +"You decide to ignore your phone buzzing, it can't be that urgent and someone else will probably sort out whatever the issue is.\nYou close your eyes and go back to sleep")
             print ("\n *****************************\n")
             print ("GAME OVER - YOUR LAZINESS RESULTED IN THE DOWNFALL OF KPMG")
+            playsound('Gameover.mp3')
             break
         elif ans.upper() == "YES":
             print(Fore.GREEN + "\nYou grab your phone from your pocket and see 27 missed calls and 3 unopened messages from Balajee\nYou should probably find out why he is trying to get in contact so urgently.\n \nDo you want to ring him back or read the messages?\n(call balajee/read messages)\n")
@@ -100,6 +101,8 @@ def start ():
                     print(Fore.BLUE + "Do you want to try and call again or read the messages?(read messages/call again)\n")
                     question2 = input()
                     if question2.upper() == "CALL AGAIN" or question2.upper() == "CALL BALAJEE":
+                        engine.say("No answer from Balajee, Please read message instead?")
+                        engine.runAndWait()
                         print("\nYou try to call Balajee again but there is still no answer. It seems ringing him is a waste of time. (Call again/read messages)\n")
                         question = input()
                     elif question2.upper() == "READ MESSAGES":
@@ -193,8 +196,12 @@ def floor_13(count_key):
         else:
             elevetor_open= False
             print("Sorry you made the wrong choice of tool")
+            engine.say("Noooooooooooo")
+            engine.runAndWait()
             print ("\n *****************************\n")
             print ("GAME OVER - YOUR FAILED AND RESULTED IN THE DOWNFALL OF KPMG")
+            playsound('Gameover.mp3')
+
         
 
 
@@ -319,29 +326,18 @@ def floor_13(count_key):
     item = False
     while item == False:
         if count_key == 0:
-            print("\nYou selected the wrong item! You cannot continue without the key. You have failed in your quest to find Lindsey, your actions have resulted in the downfall of KPMG\n")
+            print(Fore.LIGHTRED_EX+"\nYou selected the wrong item! You cannot continue without the key. You have failed in your quest to find Lindsey, your actions have resulted in the downfall of KPMG\n")
+            playsound('Gameover.mp3')
             exit()
         else:
             item = True
             floor_13_map()
-            print("\nYou have found the key to free Lindsey! If you act quickly you may be eligible for a promotion\n")
+            engine.say("Yessssssssssssssssss")
+            engine.runAndWait()
+            print(Fore.GREEN+"\nYou have found the key to free Lindsey! If you act quickly you may be eligible for a promotion\n")
             print("\n")
+            playsound('Win.mp3')
+            exit()
 
-
-
-            
-    
-# else:
-#     print("You're in floor 13, no map, \n Do you dare to open? ")
-#             close = "door closed":
-#            if ans.upper() == "YES": 
-#                print("you are floor 13")
-#            if ans.upper() == "NO":
-#            print ("\n *****************************\n")
-#            print ("GAME OVER - YOUR LAZINESS RESULTED IN THE DOWNFALL OF KPMG")
-#            break
-            
-            
-#         count_crisp += 1
 
 start()
